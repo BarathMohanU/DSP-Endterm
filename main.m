@@ -3,16 +3,18 @@
 figure;
 for i =1:4
     [t,e] = EAHN(20);
-    subplot(2,2,i); plot(t,e);
+    subplot(2,2,i); plot(t,e); title(sprintf('Realization %d',i));
 end
+sgtitle('EAHN');
 
 %% b
 
 figure;
 for i =1:4
     [t,e] = UAHN(20);
-    subplot(2,2,i); plot(t,e);
+    subplot(2,2,i); plot(t,e); title(sprintf('Realization %d',i));
 end
+sgtitle('UAHN');
 
 %% c
 
@@ -32,7 +34,7 @@ for i=1:length(db)
         l = l+1;
     end
 end
-sgtitle('EAHN');
+sgtitle('EAHN - Noisy Signals');
 
 %% d
 
@@ -51,7 +53,7 @@ for i=1:length(db)
         l = l+1;
     end
 end
-sgtitle('UAHN');
+sgtitle('UAHN - Noisy Signals');
 
 %% e
 
