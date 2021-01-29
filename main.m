@@ -67,3 +67,18 @@ for i=1:length(db)
     end
     fprintf('The mean SNR is %0.2f (actual SNR = %d) with a standard deviation %0.2f\n', mean(SNR), db(i), std(SNR));
 end
+
+%% f
+
+load('data.mat');
+y = y(8001:16000)';
+db = [0, 5, 10, 15];
+
+for i=1:length(db)
+    for j=1:10
+        [~,e] = UAHN(1000);
+        noisy_sig = addnoise(y, e, db(i));
+        SNR(j) = binSNR(noisy_sig);
+    end
+    fprintf('The mean SNR is %0.2f (actual SNR = %d) with a standard deviation %0.2f\n', mean(SNR), db(i), std(SNR));
+end
