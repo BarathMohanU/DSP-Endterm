@@ -1,5 +1,6 @@
 function SNR = binSNR(sig)
-    L = 8000;
+
+    L = length(sig);
     Fs = 8000;
     f = Fs*(0:(L))/L;
 

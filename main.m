@@ -80,5 +80,5 @@ for i=1:length(db)
         noisy_sig = addnoise(y, e, db(i));
         SNR(j) = binSNR(noisy_sig);
     end
-    fprintf('The mean SNR is %0.2f (actual SNR = %d) with a standard deviation %0.2f\n', mean(SNR), db(i), std(SNR));
+    fprintf('The mean SNR is %0.2f db (actual SNR = %d db), with a standard deviation %0.2f\n', mean(SNR), db(i), std(SNR));
 end
