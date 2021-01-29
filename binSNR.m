@@ -8,9 +8,10 @@ function SNR = binSNR(sig)
 
     Enoise = 0;
     Esig = 0;
-
+    range = [599,0,1];
+    
     for i=1:length(f)
-        if mod(f(i),600) == 0
+        if sum(mod(f(i),600) == range) == 1
             Enoise = Enoise + power(i);
         else
             Esig = Esig + power(i);
