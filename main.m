@@ -61,6 +61,7 @@ load('data.mat');
 y = y(8001:16000)';
 db = [0, 5, 10, 15];
 
+fprintf('EAHN\n');
 for i=1:length(db)
     for j=1:10
         [~,e] = EAHN(1000);
@@ -76,6 +77,7 @@ load('data.mat');
 y = y(8001:16000)';
 db = [0, 5, 10, 15];
 
+fprintf('UAHN\n');
 for i=1:length(db)
     for j=1:10
         [~,e] = UAHN(1000);
